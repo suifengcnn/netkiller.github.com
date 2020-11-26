@@ -1,59 +1,39 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>第 24 章 调试工具</title><link rel="stylesheet" type="text/css" href="..//docbook.css" /><meta name="generator" content="DocBook XSL Stylesheets V1.78.1" /><meta name="keywords" content="PHP, Python, Perl, Ruby, Java, HTML, XHTML, HTML5, CSS, Javascript, JQuery, C, C++, D" /><link rel="home" href="../index.html" title="Netkiller Developer 手札" /><link rel="up" href="index.html" title="部分 V. C/C++" /><link rel="prev" href="Objective-C.html" title="第 23 章 Objective-C" /><link rel="next" href="ftop.html" title="24.2. ftop - Tool to show progress of open files and file systems" /></head><body><a xmlns="" href="http://netkiller.github.io/">Home</a> |
-		<a xmlns="" href="http://netkiller.github.io/">简体中文</a> |
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>第 29 章 调试工具</title><link rel="stylesheet" type="text/css" href="..//docbook.css" /><meta name="generator" content="DocBook XSL Stylesheets V1.79.1" /><meta name="keywords" content="PHP, Python, Perl, Ruby, Java, HTML, XHTML, HTML5, CSS, Javascript, JQuery, C, C++, D" /><link rel="home" href="../index.html" title="Netkiller Developer 手札" /><link rel="up" href="index.html" title="部分 IV. C/C++" /><link rel="prev" href="Objective-C.html" title="第 28 章 Objective-C" /><link rel="next" href="strace.html" title="29.2. strace - trace system calls and signals" /></head><body><a xmlns="" href="//www.netkiller.cn/">Home</a> |
+		<a xmlns="" href="//netkiller.github.io/">简体中文</a> |
 	    <a xmlns="" href="http://netkiller.sourceforge.net/">繁体中文</a> |
 	    <a xmlns="" href="/journal/index.html">杂文</a> |
-	    <a xmlns="" href="/search.html">Search</a> |
-	    <a xmlns="" href="http://netkiller-github-com.iteye.com/">ITEYE 博客</a> |
+	    <a xmlns="" href="//www.netkiller.cn/home/donations.html">打赏(Donations)</a> |
+	    <a xmlns="" href="https://github.com/netkiller">Github</a> |
 	    <a xmlns="" href="http://my.oschina.net/neochen/">OSChina 博客</a> |
+	    <a xmlns="" href="https://cloud.tencent.com/developer/column/2078">云社区</a> |
+	    <a xmlns="" href="https://yq.aliyun.com/u/netkiller/">云栖社区</a> |
 	    <a xmlns="" href="https://www.facebook.com/bg7nyt">Facebook</a> |
 	    <a xmlns="" href="http://cn.linkedin.com/in/netkiller/">Linkedin</a> |
-		<a xmlns="" href="mailto:netkiller@msn.com">Email</a><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">第 24 章 调试工具</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="Objective-C.html">上一页</a> </td><th width="60%" align="center">部分 V. C/C++</th><td width="20%" align="right"> <a accesskey="n" href="ftop.html">下一页</a></td></tr></table><hr /><table width="100%" border="0"><tr><td align="left"><a href="http://netkiller.sourceforge.net/">Home</a> | 
-		<a href="http://netkiller.github.com/">Mirror</a> |		
-		<a href="/search.html">Search</a></td><td align="right"></td></tr></table></div><table xmlns=""><tr><td><iframe src="http://ghbtns.com/github-btn.html?user=netkiller&amp;repo=netkiller.github.com&amp;type=watch&amp;count=true&amp;size=large" height="30" width="170" frameborder="0" scrolling="0" style="width:170px; height: 30px;" allowTransparency="true"></iframe></td><td><iframe src="http://ghbtns.com/github-btn.html?user=netkiller&amp;repo=netkiller.github.com&amp;type=fork&amp;count=true&amp;size=large" height="30" width="170" frameborder="0" scrolling="0" style="width:170px; height: 30px;" allowTransparency="true"></iframe></td><td><iframe src="http://ghbtns.com/github-btn.html?user=netkiller&amp;type=follow&amp;count=true&amp;size=large" height="30" width="240" frameborder="0" scrolling="0" style="width:240px; height: 30px;" allowTransparency="true"></iframe></td></tr></table><div class="chapter"><div class="titlepage"><div><div><h2 class="title"><a id="c.debug"></a>第 24 章 调试工具</h2></div></div></div><div class="toc"><p><strong>目录</strong></p><dl class="toc"><dt><span class="section"><a href="c.debug.html#lsof">24.1. lsof - list open files</a></span></dt><dt><span class="section"><a href="ftop.html">24.2. ftop - Tool to show progress of open files and file systems</a></span></dt><dt><span class="section"><a href="strace.html">24.3. strace - trace system calls and signals</a></span></dt><dd><dl><dt><span class="section"><a href="strace.html#idp46786304">24.3.1. -o file -- send trace output to FILE instead of stderr</a></span></dt></dl></dd><dt><span class="section"><a href="ltrace.html">24.4. ltrace - A library call tracer</a></span></dt><dt><span class="section"><a href="ldd.html">24.5.  ldd - print shared library dependencies </a></span></dt><dt><span class="section"><a href="valgrind.html">24.6. Valgrind</a></span></dt><dt><span class="section"><a href="ch24s07.html">24.7. nm - list symbols from object files</a></span></dt></dl></div>
+	    <a xmlns="" href="https://zhuanlan.zhihu.com/netkiller">知乎专栏</a> |
+	    <a xmlns="" href="//www.netkiller.cn/home/video.html">视频教程</a> |
+	    <a xmlns="" href="//www.netkiller.cn/home/about.html">About</a><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">第 29 章 调试工具</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="Objective-C.html">上一页</a> </td><th width="60%" align="center">部分 IV. C/C++</th><td width="20%" align="right"> <a accesskey="n" href="strace.html">下一页</a></td></tr></table><hr /></div><table xmlns=""><tr><td><iframe src="//ghbtns.com/github-btn.html?user=netkiller&amp;repo=netkiller.github.io&amp;type=watch&amp;count=true&amp;size=large" height="30" width="170" frameborder="0" scrolling="0" style="width:170px; height: 30px;" allowTransparency="true"></iframe></td><td><iframe src="//ghbtns.com/github-btn.html?user=netkiller&amp;repo=netkiller.github.io&amp;type=fork&amp;count=true&amp;size=large" height="30" width="170" frameborder="0" scrolling="0" style="width:170px; height: 30px;" allowTransparency="true"></iframe></td><td><iframe src="//ghbtns.com/github-btn.html?user=netkiller&amp;type=follow&amp;count=true&amp;size=large" height="30" width="240" frameborder="0" scrolling="0" style="width:240px; height: 30px;" allowTransparency="true"></iframe></td></tr></table><div class="chapter"><div class="titlepage"><div><div><h2 class="title"><a id="c.debug"></a>第 29 章 调试工具</h2></div></div></div><div class="toc"><p><strong>目录</strong></p><dl class="toc"><dt><span class="section"><a href="c.debug.html#ftop">29.1. ftop - Tool to show progress of open files and file systems</a></span></dt><dt><span class="section"><a href="strace.html">29.2. strace - trace system calls and signals</a></span></dt><dd><dl><dt><span class="section"><a href="strace.html#idp132">29.2.1. -o file -- send trace output to FILE instead of stderr</a></span></dt></dl></dd><dt><span class="section"><a href="ltrace.html">29.3. ltrace - A library call tracer</a></span></dt><dt><span class="section"><a href="ldd.html">29.4.  ldd - print shared library dependencies </a></span></dt><dt><span class="section"><a href="valgrind.html">29.5. Valgrind</a></span></dt><dt><span class="section"><a href="nm.html">29.6. nm - list symbols from object files</a></span></dt><dt><span class="section"><a href="objdump.html">29.7. objdump - display information from object files.</a></span></dt><dt><span class="section"><a href="readelf.html">29.8. readelf - Displays information about ELF files.</a></span></dt></dl></div>
+	
+	<div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="ftop"></a>29.1. ftop - Tool to show progress of open files and file systems</h2></div></div></div>
 		
-		<div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="lsof"></a>24.1. lsof - list open files</h2></div></div></div>
-			
-			<pre class="screen">
-neo@netkiller:~/workspace/Document$ lsof -p $$
-COMMAND  PID USER   FD   TYPE DEVICE SIZE/OFF   NODE NAME
-zsh     4536  neo  cwd    DIR    8,6     4096     30 /home/neo/workspace/Document
-zsh     4536  neo  rtd    DIR    8,1     4096      2 /
-zsh     4536  neo  txt    REG    8,1   675792   6907 /bin/zsh4
-zsh     4536  neo  mem    REG    8,1    68824  56594 /usr/lib/zsh/4.3.10/zsh/computil.so
-zsh     4536  neo  mem    REG    8,1    41000  30570 /usr/lib/zsh/4.3.10/zsh/parameter.so
-zsh     4536  neo  mem    REG    8,1    31512  53350 /usr/lib/zsh/4.3.10/zsh/zutil.so
-zsh     4536  neo  mem    REG    8,1   153096  53354 /usr/lib/zsh/4.3.10/zsh/complete.so
-zsh     4536  neo  mem    REG    8,1   290888  56596 /usr/lib/zsh/4.3.10/zsh/zle.so
-zsh     4536  neo  mem    REG    8,1    10544  30579 /usr/lib/zsh/4.3.10/zsh/terminfo.so
-zsh     4536  neo  mem    REG    8,1    51712  19594 /lib/libnss_files-2.11.1.so
-zsh     4536  neo  mem    REG    8,1    43552  23798 /lib/libnss_nis-2.11.1.so
-zsh     4536  neo  mem    REG    8,1    97256  15503 /lib/libnsl-2.11.1.so
-zsh     4536  neo  mem    REG    8,1    35712  16431 /lib/libnss_compat-2.11.1.so
-zsh     4536  neo  mem    REG    8,1    18704   1902 /lib/libattr.so.1.1.0
-zsh     4536  neo  mem    REG    8,1  1568136   7583 /lib/libc-2.11.1.so
-zsh     4536  neo  mem    REG    8,1   534832  11379 /lib/libm-2.11.1.so
-zsh     4536  neo  mem    REG    8,1   323640   7295 /lib/libncursesw.so.5.7
-zsh     4536  neo  mem    REG    8,1    14696  11378 /lib/libdl-2.11.1.so
-zsh     4536  neo  mem    REG    8,1    18888   5099 /lib/libcap.so.2.17
-zsh     4536  neo  mem    REG    8,1   136936   7487 /lib/ld-2.11.1.so
-zsh     4536  neo  mem    REG    8,1   256324 145156 /usr/lib/locale/en_US.utf8/LC_CTYPE
-zsh     4536  neo  mem    REG    8,1       54 131099 /usr/lib/locale/en_US.utf8/LC_NUMERIC
-zsh     4536  neo  mem    REG    8,1     2454 145158 /usr/lib/locale/en_US.utf8/LC_TIME
-zsh     4536  neo  mem    REG    8,1  1170770 145157 /usr/lib/locale/en_US.utf8/LC_COLLATE
-zsh     4536  neo  mem    REG    8,1      286 145159 /usr/lib/locale/en_US.utf8/LC_MONETARY
-zsh     4536  neo  mem    REG    8,1       57 145160 /usr/lib/locale/en_US.utf8/LC_MESSAGES/SYS_LC_MESSAGES
-zsh     4536  neo  mem    REG    8,1    26048  73711 /usr/lib/gconv/gconv-modules.cache
-zsh     4536  neo  mem    REG    8,1       34 131105 /usr/lib/locale/en_US.utf8/LC_PAPER
-zsh     4536  neo  mem    REG    8,1       77 131106 /usr/lib/locale/en_US.utf8/LC_NAME
-zsh     4536  neo  mem    REG    8,1      155 145161 /usr/lib/locale/en_US.utf8/LC_ADDRESS
-zsh     4536  neo  mem    REG    8,1       59 145162 /usr/lib/locale/en_US.utf8/LC_TELEPHONE
-zsh     4536  neo  mem    REG    8,1       23 131109 /usr/lib/locale/en_US.utf8/LC_MEASUREMENT
-zsh     4536  neo  mem    REG    8,1      373 145163 /usr/lib/locale/en_US.utf8/LC_IDENTIFICATION
-zsh     4536  neo    0u   CHR  136,0      0t0      3 /dev/pts/0
-zsh     4536  neo    1u   CHR  136,0      0t0      3 /dev/pts/0
-zsh     4536  neo    2u   CHR  136,0      0t0      3 /dev/pts/0
-zsh     4536  neo   10u   CHR  136,0      0t0      3 /dev/pts/0
+		<p>ftop 是一个显示进程打开文件的工具</p>
+		<pre class="screen">
+Tue Jan 20 16:25:50 2015                                                                                 ftop 1.0
+Processes:  47 total, 0 unreadable                                                Press h for help, o for options
+Open Files: 57 regular, 0 dir, 149 chr, 0 blk, 12 pipe, 59 sock, 15 misc
+
+_  PID    #FD  USER      COMMAND                                                                                  
+-- 413    10   root      /sbin/udevd -d
+|  +- 3    -rw  --	935/935      /dev/.udev/queue.bin
+-- 982    7    root      auditd
+|  +- 5    --W  --     3.1M/3.1M     /var/log/audit/audit.log
+-- 1002   5    root      /sbin/rsyslogd -i /var/run/syslogd.pid -c 5
+|  +- out  --W  --     8059/8059     /var/log/messages
+|  +- err  --W  --    16443/16443    /var/log/cron
+|  +- 3    -r-  --        0/0        /proc/kmsg
+|  +- 4    --W  --    14976/14976    /var/log/secure
+-- 1106   17   www       nginx: worker process                   
+|  +- err  --W  --   538920/538920   /var/log/nginx/error.log (fd 11 for PID 1106)
 		</pre>
 	</div>
 	
@@ -62,22 +42,21 @@ zsh     4536  neo   10u   CHR  136,0      0t0      3 /dev/pts/0
 	
 	
 	
-</div><div xmlns="" id="disqus_thread"></div><script xmlns="" type="text/javascript">
-            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+	
+</div><div xmlns="" id="disqus_thread"></div><script xmlns="">
 
-            //if(document.domain == 'netkiller.github.com'){
-            var disqus_shortname = 'netkiller'; // required: replace example with your forum shortname
-            //}else{
-			//var disqus_shortname = 'neochan';
-            //}
+var disqus_config = function () {
+this.page.url = "http://www.netkiller.cn";  // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = 'netkiller'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
 
-            /* * * DON'T EDIT BELOW THIS LINE * * */
-            (function() {
-                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-                dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
-                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-            })();
-        </script><noscript xmlns="">Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript><a xmlns="" href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a><br xmlns="" /><div xmlns="" id="clustrmaps-widget"></div><script xmlns="" type="text/javascript">var _clustrmaps = {'url' : 'http://netkiller.github.io', 'user' : 1107643, 'server' : '2', 'id' : 'clustrmaps-widget', 'version' : 1, 'date' : '2013-08-14', 'lang' : 'en', 'corners' : 'square' };(function (){ var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = 'http://www2.clustrmaps.com/counter/map.js'; var x = document.getElementsByTagName('script')[0]; x.parentNode.insertBefore(s, x);})();</script><noscript xmlns=""><a href="http://www2.clustrmaps.com/user/87410e6bb"><img src="http://www2.clustrmaps.com/stats/maps-no_clusters/netkiller.github.io-thumb.jpg" alt="Locations of visitors to this page" /></a></noscript><div class="navfooter"><hr /><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="Objective-C.html">上一页</a> </td><td width="20%" align="center"><a accesskey="u" href="index.html">上一级</a></td><td width="40%" align="right"> <a accesskey="n" href="ftop.html">下一页</a></td></tr><tr><td width="40%" align="left" valign="top">第 23 章 Objective-C </td><td width="20%" align="center"><a accesskey="h" href="../index.html">起始页</a></td><td width="40%" align="right" valign="top"> 24.2. ftop - Tool to show progress of open files and file systems</td></tr></table></div><script xmlns="">
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = '//netkiller.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script><noscript xmlns="">Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript><br xmlns="" /><script xmlns="" type="text/javascript" id="clustrmaps" src="//cdn.clustrmaps.com/map_v2.js?u=r5HG&amp;d=9mi5r_kkDC8uxG8HuY3p4-2qgeeVypAK9vMD-2P6BYM"></script><div class="navfooter"><hr /><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="Objective-C.html">上一页</a> </td><td width="20%" align="center"><a accesskey="u" href="index.html">上一级</a></td><td width="40%" align="right"> <a accesskey="n" href="strace.html">下一页</a></td></tr><tr><td width="40%" align="left" valign="top">第 28 章 Objective-C </td><td width="20%" align="center"><a accesskey="h" href="../index.html">起始页</a></td><td width="40%" align="right" valign="top"> 29.2. strace - trace system calls and signals</td></tr></table></div><script xmlns="">
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
@@ -86,7 +65,25 @@ zsh     4536  neo   10u   CHR  136,0      0t0      3 /dev/pts/0
   ga('create', 'UA-11694057-1', 'auto');
   ga('send', 'pageview');
 
-</script><script xmlns="" type="text/javascript">
-var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
-document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F997cd4a7320a82d72cb74d179118f697' type='text/javascript'%3E%3C/script%3E"));
-</script><script xmlns="" type="text/javascript" src="/js/q.js"></script></body></html>
+</script><script xmlns="" async="async">
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?93967759a51cda79e49bf4e34d0b0f2c";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script><script xmlns="" async="async">
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script><script xmlns="" type="text/javascript" src="/js/q.js" async="async"></script></body></html>

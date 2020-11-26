@@ -1,18 +1,75 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>4.2. 表管理(Table)</title><link rel="stylesheet" type="text/css" href="..//docbook.css" /><meta name="generator" content="DocBook XSL Stylesheets V1.78.1" /><link rel="home" href="../index.html" title="Netkiller MySQL 手札" /><link rel="up" href="index.html" title="第 4 章 DDL - Data Definition Language" /><link rel="prev" href="index.html" title="第 4 章 DDL - Data Definition Language" /><link rel="next" href="partition.html" title="4.3. Partitioning" /></head><body><a xmlns="" href="http://netkiller.github.io/">Home</a> |
-		<a xmlns="" href="http://netkiller.github.io/">简体中文</a> |
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>4.2. 表管理(Table)</title><link rel="stylesheet" type="text/css" href="..//docbook.css" /><meta name="generator" content="DocBook XSL Stylesheets V1.79.1" /><link rel="home" href="../index.html" title="Netkiller MySQL 手札" /><link rel="up" href="index.html" title="第 4 章 DDL - Data Definition Language" /><link rel="prev" href="index.html" title="第 4 章 DDL - Data Definition Language" /><link rel="next" href="partition.html" title="4.3. Partitioning" /></head><body><a xmlns="" href="//www.netkiller.cn/">Home</a> |
+		<a xmlns="" href="//netkiller.github.io/">简体中文</a> |
 	    <a xmlns="" href="http://netkiller.sourceforge.net/">繁体中文</a> |
 	    <a xmlns="" href="/journal/index.html">杂文</a> |
-	    <a xmlns="" href="/search.html">Search</a> |
-	    <a xmlns="" href="http://netkiller-github-com.iteye.com/">ITEYE 博客</a> |
+	    <a xmlns="" href="https://zhuanlan.zhihu.com/netkiller">知乎专栏</a> |
+	    <a xmlns="" href="https://github.com/netkiller">Github</a> |
 	    <a xmlns="" href="http://my.oschina.net/neochen/">OSChina 博客</a> |
+	    <a xmlns="" href="https://cloud.tencent.com/developer/column/2078">云社区</a> |
+	    <a xmlns="" href="https://yq.aliyun.com/u/netkiller/">云栖社区</a> |
 	    <a xmlns="" href="https://www.facebook.com/bg7nyt">Facebook</a> |
 	    <a xmlns="" href="http://cn.linkedin.com/in/netkiller/">Linkedin</a> |
-		<a xmlns="" href="mailto:netkiller@msn.com">Email</a><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">4.2. 表管理(Table)</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="index.html">上一页</a> </td><th width="60%" align="center">第 4 章 DDL - Data Definition Language</th><td width="20%" align="right"> <a accesskey="n" href="partition.html">下一页</a></td></tr></table><hr /><table width="100%" border="0"><tr><td align="left"><a href="http://netkiller.sourceforge.net/">Home</a> | 
-		<a href="http://netkiller.github.com/">Mirror</a> |		
-		<a href="/search.html">Search</a></td><td align="right"></td></tr></table></div><table xmlns=""><tr><td><iframe src="http://ghbtns.com/github-btn.html?user=netkiller&amp;repo=netkiller.github.com&amp;type=watch&amp;count=true&amp;size=large" height="30" width="170" frameborder="0" scrolling="0" style="width:170px; height: 30px;" allowTransparency="true"></iframe></td><td><iframe src="http://ghbtns.com/github-btn.html?user=netkiller&amp;repo=netkiller.github.com&amp;type=fork&amp;count=true&amp;size=large" height="30" width="170" frameborder="0" scrolling="0" style="width:170px; height: 30px;" allowTransparency="true"></iframe></td><td><iframe src="http://ghbtns.com/github-btn.html?user=netkiller&amp;type=follow&amp;count=true&amp;size=large" height="30" width="240" frameborder="0" scrolling="0" style="width:240px; height: 30px;" allowTransparency="true"></iframe></td></tr></table><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="table"></a>4.2. 表管理(Table)</h2></div></div></div>
+	    <a xmlns="" href="//www.netkiller.cn/home/video.html">视频教程</a> |
+	    <a xmlns="" href="//www.netkiller.cn/home/donations.html">打赏(Donations)</a> |
+	    <a xmlns="" href="//www.netkiller.cn/home/about.html">About</a><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">4.2. 表管理(Table)</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="index.html">上一页</a> </td><th width="60%" align="center">第 4 章 DDL - Data Definition Language</th><td width="20%" align="right"> <a accesskey="n" href="partition.html">下一页</a></td></tr></table><hr /></div><table xmlns=""><tr><td><iframe src="//ghbtns.com/github-btn.html?user=netkiller&amp;repo=netkiller.github.io&amp;type=watch&amp;count=true&amp;size=large" height="30" width="170" frameborder="0" scrolling="0" style="width:170px; height: 30px;" allowTransparency="true"></iframe></td><td><iframe src="//ghbtns.com/github-btn.html?user=netkiller&amp;repo=netkiller.github.io&amp;type=fork&amp;count=true&amp;size=large" height="30" width="170" frameborder="0" scrolling="0" style="width:170px; height: 30px;" allowTransparency="true"></iframe></td><td><iframe src="//ghbtns.com/github-btn.html?user=netkiller&amp;type=follow&amp;count=true&amp;size=large" height="30" width="240" frameborder="0" scrolling="0" style="width:240px; height: 30px;" allowTransparency="true"></iframe></td><td></td><td><a href="https://zhuanlan.zhihu.com/netkiller"><img src="/images/logo/zhihu-card-default.svg" height="25" /></a></td><td valign="middle"><a href="https://zhuanlan.zhihu.com/netkiller">知乎专栏</a> ｜ <a href="https://www.zhihu.com/club/1241768772601950208">多维度架构</a></td></tr></table><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="table"></a>4.2. 表管理(Table)</h2></div></div></div>
 		
-		<div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="idp51242528"></a>4.2.1. create table ... select</h3></div></div></div>
+		<div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="idp110"></a>4.2.1. 数据类型</h3></div></div></div>
+			
+			<div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="idp109"></a>4.2.1.1. SET 集合类型</h4></div></div></div>
+				
+				<p>SET 集合类型，此类型适合用于多项选择场景，例如保存表单中的checkbox。</p>
+				<pre class="screen">
+				
+CREATE TABLE `QA` (
+	`id` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+	`question` VARCHAR(255) NOT NULL COMMENT '问题描述',
+	`answer` SET('A','B','C','D') NOT NULL COMMENT '问题答案',
+	PRIMARY KEY (`id`)
+)
+COMMENT='Multiple Choice'
+COLLATE='utf8_general_ci'
+ENGINE=InnoDB;
+				
+				</pre>
+				<p>插入数据</p>
+				<pre class="screen">
+				
+INSERT INTO `QA` (`id`, `question`, `answer`) VALUES
+	(1, 'Netkiller 系列手札始于那一年？ A.2000年，B.2008年，C.2010年，D.2016年', 'A'),
+	(2, 'Netkiller 系列手札有哪些? A.《Netkiller Scals 手札》, B.《Netkiller Java 手札》, C.《Netkiller Linux 手札》, D.《Netkiller EMC 手札》', 'B,C'),
+	(3, 'XXXXXXXXX', 'C,D'),
+	(4, 'XXXXXXXXX', 'A,B,C'),
+	...
+	...
+	(1000, 'XXXXXXXXXX', 'B,C,D'),
+	...
+	...
+	(5000, 'XXXXXXXXXX', 'A,B,C,D');
+				
+				</pre>
+				<p>查询 SET 结果集，MySQL为SET配备了FIND_IN_SET函数</p>
+				<pre class="programlisting">
+				
+select * from QA where FIND_IN_SET('B',`answer`);
+				
+				</pre>
+				<p>下面两种方法也能实现，但不推荐使用。</p>
+				<pre class="programlisting">
+				
+select question, answer from QA where locate('B',answer)&gt;0;
+select question, answer from QA where POSITION('B' in answer)&gt;0;				
+				
+				</pre>
+				<p>查询多个答案</p>
+				<pre class="programlisting">
+				
+select question, answer from QA where answer = 'B,C';				
+				
+				</pre>
+			</div>
+		</div>
+		<div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="idp111"></a>4.2.2. create table ... select</h3></div></div></div>
 			
 			<p>创建空表</p>
 			<pre class="programlisting">
@@ -27,50 +84,91 @@ create table admin_user_history select * from admin_user;
 			
 			</pre>
 		</div>
-		<div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="idp51245232"></a>4.2.2. modifiy table</h3></div></div></div>
+		<div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="idp112"></a>4.2.3. modifiy table</h3></div></div></div>
 			
 			<p>modifiy table</p>
 			<pre class="screen">
+			
 ALTER TABLE ecs_users add user_picture varchar(255);
+			
 			</pre>
 		</div>
-		<div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="idp51247120"></a>4.2.3. TEMPORARY Table</h3></div></div></div>
+		<div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="temporary"></a>4.2.4. TEMPORARY Table</h3></div></div></div>
 			
 			<p>临时表将在你连接期间存在。一旦断开时将自动删除表并释放所用的空间。你在连接期间删除该表也同样释放空间。</p>
 			<pre class="screen">
+			
 CREATE TEMPORARY TABLE tmp_table (
 	key VARCHAR(10) NOT NULL,
 	value INTEGER NOT NULL
 )
+			
 			</pre>
 			<p>声明临时表是一个HEAP表，允许你指定在内存中创建它</p>
 			<pre class="screen">
+			
 CREATE TEMPORARY TABLE tmp_mem_table (
 	key VARCHAR(10) NOT NULL,
 	value INTEGER NOT NULL
 ) TYPE = HEAP
+			
 			</pre>
 		</div>
-		<div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="idp51250288"></a>4.2.4. Collate</h3></div></div></div>
+		<div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="collate"></a>4.2.5. Collate</h3></div></div></div>
 			
 			<pre class="programlisting">
+			
 ALTER TABLE `tmp_cats`  COLLATE='utf8_general_ci',  CONVERT TO CHARSET utf8;
+			
 			</pre>
 		</div>
-		<div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="idp51251632"></a>4.2.5. CHARACTER</h3></div></div></div>
+		<div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="character"></a>4.2.6. CHARACTER</h3></div></div></div>
 			
 			<pre class="screen">
 			
 ALTER TABLE &lt;table_name&gt; CONVERT TO CHARACTER SET utf8;
+alter table &lt;table_name&gt; convert to charset utf8mb4;
 			
 			</pre>
 		</div>
-		<div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="idp51253040"></a>4.2.6. DEFAULT</h3></div></div></div>
+		<div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="default"></a>4.2.7. DEFAULT</h3></div></div></div>
 			
-			<p>更新时间</p>
-			<p>`mtime` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更改时间',</p>
-			<pre class="screen">
-			
+			<div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="AUTO_INCREMENT"></a>4.2.7.1. AUTO_INCREMENT</h4></div></div></div>
+				
+				<p>定义 AUTO_INCREMENT 起始值</p>
+				<pre class="programlisting">
+				
+CREATE TABLE `bank_account` (
+	`id` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT '自增唯一ID',
+	`name` VARCHAR(50) NOT NULL DEFAULT '0' COMMENT '帐号名称(Name on account)',
+	PRIMARY KEY (`id`)
+)
+COMMENT='银行帐号'
+COLLATE='utf8_general_ci'
+ENGINE=InnoDB
+AUTO_INCREMENT=2;				
+				
+				</pre>
+				<p>设置 AUTO_INCREMENT</p>
+				<pre class="programlisting">
+				
+ALTER TABLE `accounts`
+	AUTO_INCREMENT=792257;
+				
+				</pre>
+			</div>
+			<div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="ON.UPDATE"></a>4.2.7.2. TIMESTAMP NULL DEFAULT NULL ON UPDATE</h4></div></div></div>
+				
+				<pre class="screen">
+				
+alter table cms.article ADD  COLUMN `mtime` TIMESTAMP NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP COMMENT '更改时间';				
+				
+				</pre>
+
+				<p>更新时间</p>
+				<p>`mtime` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更改时间',</p>
+				<pre class="screen">
+				
 CREATE TABLE `bank_account` (
 	`id` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT '自增唯一ID',
 	`bank_name` VARCHAR(255) NOT NULL DEFAULT '0' COMMENT '银行名字(Bank Name)',
@@ -87,29 +185,12 @@ COMMENT='银行帐号'
 COLLATE='utf8_general_ci'
 ENGINE=InnoDB
 AUTO_INCREMENT=2;
-			
-			</pre>
-			<div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="idp51256320"></a>4.2.6.1. AUTO_INCREMENT</h4></div></div></div>
 				
-				<p>定义 AUTO_INCREMENT 起始值</p>
-				<pre class="programlisting">
-CREATE TABLE `bank_account` (
-	`id` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT '自增唯一ID',
-	`name` VARCHAR(50) NOT NULL DEFAULT '0' COMMENT '帐号名称(Name on account)',
-	PRIMARY KEY (`id`)
-)
-COMMENT='银行帐号'
-COLLATE='utf8_general_ci'
-ENGINE=InnoDB
-AUTO_INCREMENT=2;				
 				</pre>
-				<p>设置 AUTO_INCREMENT</p>
-				<pre class="programlisting">
-ALTER TABLE `accounts`
-	AUTO_INCREMENT=792257;				
-				</pre>
+
 			</div>
-			<div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="idp51259216"></a>4.2.6.2. 表存储位置(DATA DIRECTORY)</h4></div></div></div>
+
+			<div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="data.directory"></a>4.2.7.3. 表存储位置(DATA DIRECTORY)</h4></div></div></div>
 				
 				<pre class="programlisting">
 				
@@ -124,24 +205,47 @@ CREATE TABLE IF NOT EXISTS `tab_name` (
 				</pre>
 			</div>
 		</div>
-		<div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="key"></a>4.2.7. KEY</h3></div></div></div>
+		<div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="key"></a>4.2.8. KEY</h3></div></div></div>
 			
-			<div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="idp51262032"></a>4.2.7.1. PRIMARY KEY</h4></div></div></div>
+			<div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="idp113"></a>4.2.8.1. PRIMARY KEY</h4></div></div></div>
 				
 				<p>一般主键定义</p>
 				<pre class="screen">
+				
 PRIMARY KEY (`id`),
+				
 				</pre>
 				<p>复合主键</p>
 				<pre class="screen">
+				
 PRIMARY KEY (`id`, `user_id`),
+				
 				</pre>
 			</div>
 
 		</div>
-		<div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="idp51264752"></a>4.2.8. COMMENT</h3></div></div></div>
+		<div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="auto_increment"></a>4.2.9. AUTO_INCREMENT 定义初始值</h3></div></div></div>
 			
 			<pre class="screen">
+			
+DROP TABLE IF EXISTS users;
+CREATE TABLE user(
+    id   	INT   NOT NULL AUTO_INCREMENT
+PRIMARY KEY(id)
+)ENGINE=InnoDB AUTO_INCREMENT=100 DEFAULT CHARSET=utf8;			
+			
+			</pre>
+			<p>修改 auto_incremenrt 起始值</p>
+			<pre class="screen">
+			
+alter table tab1 auto_incremenrt=n			
+			
+			</pre>
+		</div>
+		<div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="comment"></a>4.2.10. COMMENT</h3></div></div></div>
+			
+			<pre class="screen">
+			
 ALTER TABLE `neo`.`stuff` COMMENT = '用户表' ;
 ALTER TABLE `neo`.`stuff` CHANGE COLUMN `name` `name` VARCHAR(50) NULL DEFAULT NULL COMMENT '姓名'  ;
 ALTER TABLE `neo`.`stuff` CHANGE COLUMN `password` `password` VARCHAR(50) NULL DEFAULT NULL COMMENT '用户密码' ;
@@ -156,13 +260,16 @@ CREATE TABLE `stuff` (
 ) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=latin1 COMMENT=''用户表''
 /*!50100 PARTITION BY HASH (year(created))
 PARTITIONS 10 */
+			
 			</pre>
 		</div>
 		
-<div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="engine"></a>4.2.9. Engine</h3></div></div></div>
+<div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="engine"></a>4.2.11. Engine 存储引擎</h3></div></div></div>
 	
-	<pre class="screen">
-	
+	<div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="engine.show"></a>4.2.11.1. 显示当前数据库支持引擎</h4></div></div></div>
+		
+		<pre class="screen">
+		
 mysql&gt; show engines;
 +--------------------+---------+----------------------------------------------------------------+--------------+------+------------+
 | Engine             | Support | Comment                                                        | Transactions | XA   | Savepoints |
@@ -178,14 +285,22 @@ mysql&gt; show engines;
 | InnoDB             | DEFAULT | Supports transactions, row-level locking, and foreign keys     | YES          | YES  | YES        |
 +--------------------+---------+----------------------------------------------------------------+--------------+------+------------+
 9 rows in set (0.00 sec)
-	
-	</pre>
-	<p>修改与切换引擎</p>
-	<pre class="screen">
+		
+		</pre>
+	</div>
+	<div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="engine.alter"></a>4.2.11.2. 切换引擎</h4></div></div></div>
+		
+		<p>修改与切换引擎</p>
+		<pre class="screen">
+		
 ALTER TABLE `test` ENGINE=BLACKHOLE;
 ALTER TABLE `test` ENGINE=InnoDB;
-	</pre>
-	<div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="FEDERATED"></a>4.2.9.1. FEDERATED</h4></div></div></div>
+		
+		</pre>
+	</div>
+	
+	
+	<div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="FEDERATED"></a>4.2.11.3. FEDERATED</h4></div></div></div>
 		
 		<p>启用 FEDERATED 引擎, 服务器环境 Ubuntu 13.04</p>
 		<pre class="screen">
@@ -298,29 +413,121 @@ mysql&gt; select * from users;
 			<p>切记，mysqldump 只会dump出使用FEDERATED引擎表的结构,不会包含数据。</p>
 		</td></tr></table></div>
 	</div>
-	<div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="BLACKHOLE"></a>4.2.9.2. BLACKHOLE</h4></div></div></div>
+	<div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="BLACKHOLE"></a>4.2.11.4. BLACKHOLE</h4></div></div></div>
 		
 		<pre class="programlisting">
 CREATE TABLE test(id INT, val CHAR(10)) ENGINE = BLACKHOLE;
 		</pre>
 	</div>
+	<div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="ARCHIVE"></a>4.2.11.5. ARCHIVE</h4></div></div></div>
+		
+		<p>归档(是适用于存放大量数据的存储引擎), 仅支持select、insert操作; 不支持delete 、update、索引等操作；使用zlib无损算法压缩数据，节省磁盘空间；</p>
+		<p>适用场景：适用于大量可查询但不能删除的历史数据保存；</p>
+		<p>基于 order 表创建 order_audit 归档表</p>
+		<pre class="programlisting">
+		
+create table order_audit engine=archive as select * from `order`;
+		
+		</pre>
+		<p>order_audit 表结构如下</p>
+		<pre class="programlisting">
+		
+CREATE TABLE `order_audit` (
+  `id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT '订单ID',
+  `name` varchar(45) NOT NULL COMMENT '订单名称',
+  `price` float NOT NULL COMMENT '价格',
+  `ctime` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间'
+) ENGINE=ARCHIVE DEFAULT CHARSET=utf8		
+		
+		</pre>
+		<pre class="programlisting">
+		
+mysql&gt; show table status like 'order_audit';
++-------------+---------+---------+------------+------+----------------+-------------+-----------------+--------------+-----------+----------------+-------------+---------------------+------------+-----------------+----------+----------------+---------+
+| Name        | Engine  | Version | Row_format | Rows | Avg_row_length | Data_length | Max_data_length | Index_length | Data_free | Auto_increment | Create_time | Update_time         | Check_time | Collation       | Checksum | Create_options | Comment |
++-------------+---------+---------+------------+------+----------------+-------------+-----------------+--------------+-----------+----------------+-------------+---------------------+------------+-----------------+----------+----------------+---------+
+| order_audit | ARCHIVE |      10 | Compressed |    4 |           2215 |        8861 |               0 |            0 |         0 |           NULL | NULL        | 2017-11-16 17:30:34 | NULL       | utf8_general_ci |     NULL |                |         |
++-------------+---------+---------+------------+------+----------------+-------------+-----------------+--------------+-----------+----------------+-------------+---------------------+------------+-----------------+----------+----------------+---------+
+1 row in set (0.01 sec)		
+		
+		</pre>
+	</div>
+	<div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="csv"></a>4.2.11.6. CSV</h4></div></div></div>
+		
+		<p>创建表</p>
+		<pre class="programlisting">
+		
+CREATE TABLE `csv_table` (
+  `id` int(11) NOT NULL,
+  `name` varchar(45) NOT NULL,
+  `age` int(11) NOT NULL
+) ENGINE=CSV DEFAULT CHARSET=utf8		
+		
+		</pre>
+		<p>查看表状态</p>
+		<pre class="programlisting">
+		
+mysql&gt; show table status like 'csv_table';
++-----------+--------+---------+------------+------+----------------+-------------+-----------------+--------------+-----------+----------------+-------------+-------------+------------+-----------------+----------+----------------+---------+
+| Name      | Engine | Version | Row_format | Rows | Avg_row_length | Data_length | Max_data_length | Index_length | Data_free | Auto_increment | Create_time | Update_time | Check_time | Collation       | Checksum | Create_options | Comment |
++-----------+--------+---------+------------+------+----------------+-------------+-----------------+--------------+-----------+----------------+-------------+-------------+------------+-----------------+----------+----------------+---------+
+| csv_table | CSV    |      10 | Dynamic    |    2 |              0 |           0 |               0 |            0 |         0 |           NULL | NULL        | NULL        | NULL       | utf8_general_ci |     NULL |                |         |
++-----------+--------+---------+------------+------+----------------+-------------+-----------------+--------------+-----------+----------------+-------------+-------------+------------+-----------------+----------+----------------+---------+
+1 row in set (0.00 sec)		
+		
+		</pre>
+		<p>插入数据</p>
+		<pre class="programlisting">
+		
+insert into csv_table values (1,'Neo',37),(2,'Jam',40);		
+		
+		</pre>
+		<p>查看数据</p>
+		<pre class="programlisting">
+		
+mysql&gt; SELECT * FROM test.csv_table;
++----+------+-----+
+| id | name | age |
++----+------+-----+
+|  1 | Neo  |  37 |
+|  2 | Jam  |  40 |
++----+------+-----+
+2 rows in set (0.00 sec)
+		
+		</pre>
+		<p>CSV 引擎是可以直接将csv文件复制出来的，表存储在 /var/lib/mysql/ 目录</p>
+		<pre class="screen">
+		
+root@netkiller /etc/nginx/conf.d % ls -1 /var/lib/mysql/test/csv*
+/var/lib/mysql/test/csv_table.CSM
+/var/lib/mysql/test/csv_table.CSV
+/var/lib/mysql/test/csv_table.frm		
+		
+		</pre>
+		<p>.*CSM, *.frm 是表结构文件，*.CSV 是我们需要的文件，纯文本，可以使用Excel打开。</p>
+		<pre class="screen">
+		
+root@netkiller /etc/nginx/conf.d % cat /var/lib/mysql/test/csv_table.CSV
+1,"Neo",37
+2,"Jam",40		
+		
+		</pre>
+	</div>
 </div>
-	</div><div xmlns="" id="disqus_thread"></div><script xmlns="" type="text/javascript">
-            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+	</div><div xmlns="" id="disqus_thread"></div><script xmlns="">
 
-            //if(document.domain == 'netkiller.github.com'){
-            var disqus_shortname = 'netkiller'; // required: replace example with your forum shortname
-            //}else{
-			//var disqus_shortname = 'neochan';
-            //}
+var disqus_config = function () {
+this.page.url = "http://www.netkiller.cn";  // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = 'netkiller'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
 
-            /* * * DON'T EDIT BELOW THIS LINE * * */
-            (function() {
-                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-                dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
-                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-            })();
-        </script><noscript xmlns="">Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript><a xmlns="" href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a><br xmlns="" /><div xmlns="" id="clustrmaps-widget"></div><script xmlns="" type="text/javascript">var _clustrmaps = {'url' : 'http://netkiller.github.io', 'user' : 1107643, 'server' : '2', 'id' : 'clustrmaps-widget', 'version' : 1, 'date' : '2013-08-14', 'lang' : 'en', 'corners' : 'square' };(function (){ var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = 'http://www2.clustrmaps.com/counter/map.js'; var x = document.getElementsByTagName('script')[0]; x.parentNode.insertBefore(s, x);})();</script><noscript xmlns=""><a href="http://www2.clustrmaps.com/user/87410e6bb"><img src="http://www2.clustrmaps.com/stats/maps-no_clusters/netkiller.github.io-thumb.jpg" alt="Locations of visitors to this page" /></a></noscript><div class="navfooter"><hr /><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="index.html">上一页</a> </td><td width="20%" align="center"><a accesskey="u" href="index.html">上一级</a></td><td width="40%" align="right"> <a accesskey="n" href="partition.html">下一页</a></td></tr><tr><td width="40%" align="left" valign="top">第 4 章 DDL - Data Definition Language </td><td width="20%" align="center"><a accesskey="h" href="../index.html">起始页</a></td><td width="40%" align="right" valign="top"> 4.3. Partitioning</td></tr></table></div><script xmlns="">
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = '//netkiller.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script><noscript xmlns="">Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript><br xmlns="" /><script xmlns="" type="text/javascript" id="clustrmaps" src="//cdn.clustrmaps.com/map_v2.js?u=r5HG&amp;d=9mi5r_kkDC8uxG8HuY3p4-2qgeeVypAK9vMD-2P6BYM"></script><div class="navfooter"><hr /><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="index.html">上一页</a> </td><td width="20%" align="center"><a accesskey="u" href="index.html">上一级</a></td><td width="40%" align="right"> <a accesskey="n" href="partition.html">下一页</a></td></tr><tr><td width="40%" align="left" valign="top">第 4 章 DDL - Data Definition Language </td><td width="20%" align="center"><a accesskey="h" href="../index.html">起始页</a></td><td width="40%" align="right" valign="top"> 4.3. Partitioning</td></tr></table></div><script xmlns="">
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
@@ -329,7 +536,25 @@ CREATE TABLE test(id INT, val CHAR(10)) ENGINE = BLACKHOLE;
   ga('create', 'UA-11694057-1', 'auto');
   ga('send', 'pageview');
 
-</script><script xmlns="" type="text/javascript">
-var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
-document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F997cd4a7320a82d72cb74d179118f697' type='text/javascript'%3E%3C/script%3E"));
-</script><script xmlns="" type="text/javascript" src="/js/q.js"></script></body></html>
+</script><script xmlns="" async="async">
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?93967759a51cda79e49bf4e34d0b0f2c";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script><script xmlns="" async="async">
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script></body></html>

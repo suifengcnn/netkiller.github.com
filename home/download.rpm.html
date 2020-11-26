@@ -1,0 +1,103 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="generator" content="Website XSL Stylesheet Vsnapshot"><link rel="home" href="../index.html" title="Netkiller ebook - Linux ebook"><link rel="up" href="../home/download.html" title="Download"><link rel="previous" href="../home/download.html" title="Download"><link rel="next" href="../home/download.deb.html" title="Deb"><link rel="last" href="../home/download.deb.html" title="Deb"><link rel="stylesheet" href="../stylesheet.css" type="text/css">
+		<title>Yum</title>
+		
+		
+		<meta name="keyword" content="Linux, FreeBSD, MySQL, PostgreSQL, Lighttpd, Nginx, DFS, Spring, Varnish"><meta name="keywords" content="Linux, FreeBSD, MySQL, PostgreSQL, Lighttpd, Nginx, DFS, Spring, Varnish">
+	<link rel="shortcut icon" href="/favicon.ico"><meta name="google-translate-customization" content="c6ca270b7421c69-7f96094f563bd60b-g019f6241168b32de-13"><script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-11694057-1', 'netkiller.github.io');
+  ga('send', 'pageview');
+
+</script><script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?93967759a51cda79e49bf4e34d0b0f2c";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script></head><body class="tabular" bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="webpage"><a name="yum%5D"></a><table border="0" cellpadding="0" cellspacing="0" width="100%" summary="Navigation"><tr><td valign="top" align="left" bgcolor="#4080FF"><img src="../graphics/spacer.gif" alt=" " width="1" height="1"></td><td width="10"></td><td valign="top" align="left" bgcolor="" rowspan="2"><h1>Yum</h1><p>在 CentOS 中使用 yum 下载 netkiller 手札 电子书</p><hr><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="idm11"></a>2017 版</h2></div></div></div>
+		
+		<pre class="screen">
+		
+		
+cat &gt; /etc/yum.repos.d/netkiller.repo &lt;&lt;EOF
+[netkiller]
+name=Netkiller Free Books
+baseurl=http://www.netkiller.cn/download/rpm/
+enabled=1
+gpgcheck=0
+gpgkey=
+EOF
+
+# yum repolist
+
+# yum search netkiller
+
+# yum install netkiller-centos
+		
+		
+		</pre>
+		<p>一次性使用*通配符安装所有文档</p>
+		<pre class="screen">
+		
+[root@netkiller ~]# yum install netkiller-*	
+		
+[root@netkiller ~]# ll /usr/share/doc/netkiller/
+total 32
+drwxr-xr-x 10 root root 4096 2018-01-05 22:31 architect
+drwxr-xr-x 12 root root 4096 2018-01-05 22:31 database
+drwxr-xr-x  6 root root 4096 2018-01-05 22:31 freebsd
+drwxr-xr-x 26 root root 4096 2018-01-05 22:31 linux
+drwxr-xr-x 22 root root 4096 2018-01-05 22:31 management
+drwxr-xr-x 17 root root 4096 2018-01-05 22:31 mysql
+drwxr-xr-x  9 root root 4096 2018-01-05 22:31 nosql
+drwxr-xr-x  3 root root 4096 2018-01-05 22:31 postgresql		
+		
+		</pre>
+	</div><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="rpm"></a>2016 版</h2></div></div></div>
+		
+		<p>
+			<a class="ulink" href="http://netkiller.sourceforge.net/pub/repo/" target="_top">http://netkiller.sourceforge.net/pub/repo/</a>
+		</p>
+		<pre class="screen">
+		
+# cat &gt;&gt; /etc/yum.repos.d/netkiller.repo &lt;&lt;EOF
+[netkiller]
+name=Netkiller Free Books
+baseurl=http://netkiller.sourceforge.net/pub/repo/
+enabled=1
+gpgcheck=0
+gpgkey=
+EOF
+		
+		</pre>
+		<p>查找包</p>
+		<pre class="screen">
+		
+# yum search netkiller
+
+netkiller-centos.x86_64 : Netkiller centos Cookbook
+netkiller-cryptography.x86_64 : Netkiller cryptography Cookbook
+netkiller-docbook.x86_64 : Netkiller docbook Cookbook		
+		
+		</pre>
+		<p>安装包</p>
+		<pre class="screen">
+			yum install netkiller-docbook
+		</pre>
+		<div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem">
+				<p>RPM 安装包</p>
+				<p>
+					<a class="ulink" href="http://rpmfind.net/linux/RPM/sourceforge/n/ne/netkiller/netkiller-1.0.1-1.x86_64.html" target="_top">http://rpmfind.net/linux/RPM/sourceforge/n/ne/netkiller/netkiller-1.0.1-1.x86_64.html</a>
+				</p>
+			</li></ul></div>
+	</div><br></td></tr><tr><td valign="top" align="left" bgcolor="#4080FF" width="220"><p class="navtoc"><a href="../index.html"><img align="left" border="0" src="../images/license.png" alt="Banner"></a><br clear="all"><br><span class="toplevel">    <span class="otherpage"><a href="../home/news.html" title="LATEST NEWS / UPCOMING EVENTS">News</a></span><br></span><span class="toplevel">    <span class="otherpage"><a href="../journal/index.html" title="Technology Journal">Journal</a></span><br></span><span class="toplevel">    <span class="otherpage"><a href="../home/video.html" title="Netkiller Video">Netkiller Video</a></span><br></span><span class="toplevel">    <span class="otherpage"><a href="../home/technology.html" title="Netkiller ebook">系列电子书</a></span><br></span><span class="toplevel">    <span class="ancestor"><a href="../home/download.html" title="Netkiller 手札下载">Download</a></span><br></span><span class="shrink1">      +<span class="curpage">Yum Package *</span><br></span><span class="shrink1">       <span class="otherpage"><a href="../home/download.deb.html" title="Ubuntu / Debian Package">Deb Package</a></span><br></span><span class="toplevel">    <span class="otherpage"><a href="../home/project.html" title="Opensource Project">Project</a></span><br></span><span class="toplevel">    <span class="otherpage"><a href="../home/screenshots.html" title="Website Solution Screenshots">Screenshots</a></span><br></span><span class="toplevel">    <span class="otherpage"><a href="../home/xml.html" title="RSS / ATOM">RSS / ATOM</a></span><br></span><span class="toplevel">    <span class="otherpage"><a href="../home/donations.html" title="支持这个项目(Support this project)">打赏(Donations)</a></span><br></span><span class="toplevel">    <span class="otherpage"><a href="../home/about.html" title="About">About</a></span><br></span><br></p></td><td width="10"></td></tr><tr><td><div id="google_translate_element"></div><script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({pageLanguage: 'zh-CN', layout: google.translate.TranslateElement.InlineLayout.SIMPLE, gaTrack: true, gaId: 'UA-11694057-1'}, 'google_translate_element');
+}
+</script><script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script></td></tr></table></div></body></html>

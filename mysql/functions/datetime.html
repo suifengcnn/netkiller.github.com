@@ -1,21 +1,23 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>7.4. Date and Time</title><link rel="stylesheet" type="text/css" href="..//docbook.css" /><meta name="generator" content="DocBook XSL Stylesheets V1.78.1" /><link rel="home" href="../index.html" title="Netkiller MySQL 手札" /><link rel="up" href="index.html" title="第 7 章 Functions and Operators" /><link rel="prev" href="string.html" title="7.3. String" /><link rel="next" href="numeric.html" title="7.5. 数值函数" /></head><body><a xmlns="" href="http://netkiller.github.io/">Home</a> |
-		<a xmlns="" href="http://netkiller.github.io/">简体中文</a> |
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>7.5. Date and Time</title><link rel="stylesheet" type="text/css" href="..//docbook.css" /><meta name="generator" content="DocBook XSL Stylesheets V1.79.1" /><link rel="home" href="../index.html" title="Netkiller MySQL 手札" /><link rel="up" href="index.html" title="第 7 章 Functions and Operators" /><link rel="prev" href="string.html" title="7.4. String" /><link rel="next" href="numeric.html" title="7.6. 数值函数" /></head><body><a xmlns="" href="//www.netkiller.cn/">Home</a> |
+		<a xmlns="" href="//netkiller.github.io/">简体中文</a> |
 	    <a xmlns="" href="http://netkiller.sourceforge.net/">繁体中文</a> |
 	    <a xmlns="" href="/journal/index.html">杂文</a> |
-	    <a xmlns="" href="/search.html">Search</a> |
-	    <a xmlns="" href="http://netkiller-github-com.iteye.com/">ITEYE 博客</a> |
+	    <a xmlns="" href="https://zhuanlan.zhihu.com/netkiller">知乎专栏</a> |
+	    <a xmlns="" href="https://github.com/netkiller">Github</a> |
 	    <a xmlns="" href="http://my.oschina.net/neochen/">OSChina 博客</a> |
+	    <a xmlns="" href="https://cloud.tencent.com/developer/column/2078">云社区</a> |
+	    <a xmlns="" href="https://yq.aliyun.com/u/netkiller/">云栖社区</a> |
 	    <a xmlns="" href="https://www.facebook.com/bg7nyt">Facebook</a> |
 	    <a xmlns="" href="http://cn.linkedin.com/in/netkiller/">Linkedin</a> |
-		<a xmlns="" href="mailto:netkiller@msn.com">Email</a><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">7.4. Date and Time</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="string.html">上一页</a> </td><th width="60%" align="center">第 7 章 Functions and Operators</th><td width="20%" align="right"> <a accesskey="n" href="numeric.html">下一页</a></td></tr></table><hr /><table width="100%" border="0"><tr><td align="left"><a href="http://netkiller.sourceforge.net/">Home</a> | 
-		<a href="http://netkiller.github.com/">Mirror</a> |		
-		<a href="/search.html">Search</a></td><td align="right"></td></tr></table></div><table xmlns=""><tr><td><iframe src="http://ghbtns.com/github-btn.html?user=netkiller&amp;repo=netkiller.github.com&amp;type=watch&amp;count=true&amp;size=large" height="30" width="170" frameborder="0" scrolling="0" style="width:170px; height: 30px;" allowTransparency="true"></iframe></td><td><iframe src="http://ghbtns.com/github-btn.html?user=netkiller&amp;repo=netkiller.github.com&amp;type=fork&amp;count=true&amp;size=large" height="30" width="170" frameborder="0" scrolling="0" style="width:170px; height: 30px;" allowTransparency="true"></iframe></td><td><iframe src="http://ghbtns.com/github-btn.html?user=netkiller&amp;type=follow&amp;count=true&amp;size=large" height="30" width="240" frameborder="0" scrolling="0" style="width:240px; height: 30px;" allowTransparency="true"></iframe></td></tr></table><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="datetime"></a>7.4. Date and Time</h2></div></div></div>
+	    <a xmlns="" href="//www.netkiller.cn/home/video.html">视频教程</a> |
+	    <a xmlns="" href="//www.netkiller.cn/home/donations.html">打赏(Donations)</a> |
+	    <a xmlns="" href="//www.netkiller.cn/home/about.html">About</a><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">7.5. Date and Time</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="string.html">上一页</a> </td><th width="60%" align="center">第 7 章 Functions and Operators</th><td width="20%" align="right"> <a accesskey="n" href="numeric.html">下一页</a></td></tr></table><hr /></div><table xmlns=""><tr><td><iframe src="//ghbtns.com/github-btn.html?user=netkiller&amp;repo=netkiller.github.io&amp;type=watch&amp;count=true&amp;size=large" height="30" width="170" frameborder="0" scrolling="0" style="width:170px; height: 30px;" allowTransparency="true"></iframe></td><td><iframe src="//ghbtns.com/github-btn.html?user=netkiller&amp;repo=netkiller.github.io&amp;type=fork&amp;count=true&amp;size=large" height="30" width="170" frameborder="0" scrolling="0" style="width:170px; height: 30px;" allowTransparency="true"></iframe></td><td><iframe src="//ghbtns.com/github-btn.html?user=netkiller&amp;type=follow&amp;count=true&amp;size=large" height="30" width="240" frameborder="0" scrolling="0" style="width:240px; height: 30px;" allowTransparency="true"></iframe></td><td></td><td><a href="https://zhuanlan.zhihu.com/netkiller"><img src="/images/logo/zhihu-card-default.svg" height="25" /></a></td><td valign="middle"><a href="https://zhuanlan.zhihu.com/netkiller">知乎专栏</a> ｜ <a href="https://www.zhihu.com/club/1241768772601950208">多维度架构</a></td></tr></table><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="datetime"></a>7.5. Date and Time</h2></div></div></div>
 		
 		<pre class="screen">
 SELECT NOW(),CURRENT_TIMESTAMP(),SYSDATE();		
 		</pre>
-		<div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="idp51472496"></a>7.4.1. year/month/day hour:minite:second</h3></div></div></div>
+		<div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="idp146"></a>7.5.1. year/month/day hour:minite:second</h3></div></div></div>
 			
 			<pre class="screen">
 			
@@ -70,8 +72,43 @@ mysql&gt; select second('12:30:55');
 			
 			</pre>
 		</div>
-		<div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="idp51474704"></a>7.4.2. Unix time</h3></div></div></div>
+		<div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="idp147"></a>7.5.2. Unix time</h3></div></div></div>
 			
+			<div class="literallayout"><p><br />
+			<br />
+语法：FROM_UNIXTIME(unix_timestamp,format)<br />
+返回表示 Unix 时间标记的一个字符串，根据format字符串格式化。format可以包含与DATE_FORMAT()函数列出的条目同样的修饰符。<br />
+根据format字符串格式化date值。<br />
+下列修饰符可以被用在format字符串中：<br />
+%M 月名字(January……December)<br />
+%W 星期名字(Sunday……Saturday)<br />
+%D 有英语前缀的月份的日期(1st, 2nd, 3rd, 等等。）<br />
+%Y 年, 数字, 4 位<br />
+%y 年, 数字, 2 位<br />
+%a 缩写的星期名字(Sun……Sat)<br />
+%d 月份中的天数, 数字(00……31)<br />
+%e 月份中的天数, 数字(0……31)<br />
+%m 月, 数字(01……12)<br />
+%c 月, 数字(1……12)<br />
+%b 缩写的月份名字(Jan……Dec)<br />
+%j 一年中的天数(001……366)<br />
+%H 小时(00……23)<br />
+%k 小时(0……23)<br />
+%h 小时(01……12)<br />
+%I 小时(01……12)<br />
+%l 小时(1……12)<br />
+%i 分钟, 数字(00……59)<br />
+%r 时间,12 小时(hh:mm:ss [AP]M)<br />
+%T 时间,24 小时(hh:mm:ss)<br />
+%S 秒(00……59)<br />
+%s 秒(00……59)<br />
+%p AM或PM<br />
+%w 一个星期中的天数(0=Sunday ……6=Saturday ）<br />
+%U 星期(0……52), 这里星期天是星期的第一天<br />
+%u 星期(0……52), 这里星期一是星期的第一天<br />
+%% 一个文字“%”。			<br />
+			<br />
+			</p></div>
 			<pre class="screen">
 			
 mysql&gt; SELECT UNIX_TIMESTAMP('2005-03-27 02:00:00');
@@ -99,6 +136,7 @@ SELECT UNIX_TIMESTAMP( curdate( ) );
 select FROM_UNIXTIME(UNIX_TIMESTAMP('2012-07-30 00:00:00'), '%Y-%m-%d');
 SELECT FROM_UNIXTIME( 1249488000, '%Y年%m月%d日' );
 
+SELECT FROM_UNIXTIME(time_stamp, '%Y-%m-%d %H:%i:%S') FROM test.transaction_history;
 
 select FROM_UNIXTIME(createtime, '%m') as month, count(1) as count from members where createtime BETWEEN UNIX_TIMESTAMP('2012-01-01 00:00:00') and UNIX_TIMESTAMP('2012-12-31 00:00:00') group by FROM_UNIXTIME(createtime, '%m');
 select FROM_UNIXTIME(createtime, '%m') as month, count(1) as count from members where createtime BETWEEN UNIX_TIMESTAMP('2011-01-01 00:00:00') and UNIX_TIMESTAMP('2011-12-31 00:00:00') group by FROM_UNIXTIME(createtime, '%m');
@@ -107,8 +145,9 @@ select FROM_UNIXTIME(createtime, '%m-%d') as month, count(1) as count from membe
 select FROM_UNIXTIME(createtime, '%m-%d') as month, count(1) as count from members where createtime BETWEEN UNIX_TIMESTAMP('2012-01-01 00:00:00') and UNIX_TIMESTAMP('2012-12-31 00:00:00') group by FROM_UNIXTIME(createtime, '%m-%d');
 			
 			</pre>
+			
 		</div>
-		<div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="idp51478288"></a>7.4.3. DATE_FORMAT</h3></div></div></div>
+		<div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="idp148"></a>7.5.3. DATE_FORMAT</h3></div></div></div>
 			
 			<p>DATE_FORMAT() 函数用于以不同的格式显示日期/时间数据。</p>
 			<pre class="screen">
@@ -163,7 +202,7 @@ SELECT DATE_FORMAT(NOW(),'%Y-%m-%d');
 select DATE_FORMAT(asctime,'%Y-%m-%d') as Date, count(1) as Count from logging where tag='www' and facility='login' group by DATE_FORMAT(asctime,'%Y-%m-%d') order by asctime desc;
 			</pre>
 		</div>
-		<div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="idp51482416"></a>7.4.4. DATE_SUB/DATE_ADD</h3></div></div></div>
+		<div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="idp150"></a>7.5.4. DATE_SUB/DATE_ADD</h3></div></div></div>
 			
 			<p>当前时间向后推10天</p>
 			<pre class="programlisting">
@@ -194,7 +233,7 @@ select if ( WEEKDAY(CURRENT_DATE())=6 , DATE_SUB(CURRENT_DATE(), INTERVAL 1 DAY)
 )
 			
 			</pre>
-			<div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="idp51485488"></a>7.4.4.1. DATE_ADD</h4></div></div></div>
+			<div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="idp149"></a>7.5.4.1. DATE_ADD</h4></div></div></div>
 				
 				<pre class="programlisting">
 SELECT DATE_ADD('1998-01-02', INTERVAL 31 DAY);
@@ -202,7 +241,7 @@ SELECT DATE_ADD('1998-01-02', INTERVAL 31 DAY);
 			</div>
 		</div>
 
-		<div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="idp51486896"></a>7.4.5. datediff / timediff</h3></div></div></div>
+		<div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="idp151"></a>7.5.5. datediff / timediff</h3></div></div></div>
 			
 			<p>计算时间差，两个时间相减结果</p>
 			<pre class="screen">
@@ -225,22 +264,20 @@ mysql&gt; select datediff('2008-08-08 12:00:00', '2008-08-01 00:00:00');
 			
 			</pre>
 		</div>
-	</div><div xmlns="" id="disqus_thread"></div><script xmlns="" type="text/javascript">
-            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+	</div><div xmlns="" id="disqus_thread"></div><script xmlns="">
 
-            //if(document.domain == 'netkiller.github.com'){
-            var disqus_shortname = 'netkiller'; // required: replace example with your forum shortname
-            //}else{
-			//var disqus_shortname = 'neochan';
-            //}
+var disqus_config = function () {
+this.page.url = "http://www.netkiller.cn";  // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = 'netkiller'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
 
-            /* * * DON'T EDIT BELOW THIS LINE * * */
-            (function() {
-                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-                dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
-                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-            })();
-        </script><noscript xmlns="">Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript><a xmlns="" href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a><br xmlns="" /><div xmlns="" id="clustrmaps-widget"></div><script xmlns="" type="text/javascript">var _clustrmaps = {'url' : 'http://netkiller.github.io', 'user' : 1107643, 'server' : '2', 'id' : 'clustrmaps-widget', 'version' : 1, 'date' : '2013-08-14', 'lang' : 'en', 'corners' : 'square' };(function (){ var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = 'http://www2.clustrmaps.com/counter/map.js'; var x = document.getElementsByTagName('script')[0]; x.parentNode.insertBefore(s, x);})();</script><noscript xmlns=""><a href="http://www2.clustrmaps.com/user/87410e6bb"><img src="http://www2.clustrmaps.com/stats/maps-no_clusters/netkiller.github.io-thumb.jpg" alt="Locations of visitors to this page" /></a></noscript><div class="navfooter"><hr /><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="string.html">上一页</a> </td><td width="20%" align="center"><a accesskey="u" href="index.html">上一级</a></td><td width="40%" align="right"> <a accesskey="n" href="numeric.html">下一页</a></td></tr><tr><td width="40%" align="left" valign="top">7.3. String </td><td width="20%" align="center"><a accesskey="h" href="../index.html">起始页</a></td><td width="40%" align="right" valign="top"> 7.5. 数值函数</td></tr></table></div><script xmlns="">
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = '//netkiller.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script><noscript xmlns="">Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript><br xmlns="" /><script xmlns="" type="text/javascript" id="clustrmaps" src="//cdn.clustrmaps.com/map_v2.js?u=r5HG&amp;d=9mi5r_kkDC8uxG8HuY3p4-2qgeeVypAK9vMD-2P6BYM"></script><div class="navfooter"><hr /><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="string.html">上一页</a> </td><td width="20%" align="center"><a accesskey="u" href="index.html">上一级</a></td><td width="40%" align="right"> <a accesskey="n" href="numeric.html">下一页</a></td></tr><tr><td width="40%" align="left" valign="top">7.4. String </td><td width="20%" align="center"><a accesskey="h" href="../index.html">起始页</a></td><td width="40%" align="right" valign="top"> 7.6. 数值函数</td></tr></table></div><script xmlns="">
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
@@ -249,7 +286,25 @@ mysql&gt; select datediff('2008-08-08 12:00:00', '2008-08-01 00:00:00');
   ga('create', 'UA-11694057-1', 'auto');
   ga('send', 'pageview');
 
-</script><script xmlns="" type="text/javascript">
-var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
-document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F997cd4a7320a82d72cb74d179118f697' type='text/javascript'%3E%3C/script%3E"));
-</script><script xmlns="" type="text/javascript" src="/js/q.js"></script></body></html>
+</script><script xmlns="" async="async">
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?93967759a51cda79e49bf4e34d0b0f2c";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script><script xmlns="" async="async">
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script></body></html>

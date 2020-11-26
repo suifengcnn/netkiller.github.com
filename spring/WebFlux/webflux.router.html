@@ -1,0 +1,652 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>4.2. WebFlux Router</title><link rel="stylesheet" type="text/css" href="..//docbook.css" /><meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" /><meta name="keywords" content="Spring, Spring Boot, Spring Cloud, Spring Eureka, Spring Config" /><link rel="home" href="../index.html" title="Netkiller Spring Cloud 手札" /><link rel="up" href="webflux.html" title="第 4 章 WebFlux framework" /><link rel="prev" href="webflux.html" title="第 4 章 WebFlux framework" /><link rel="next" href="../data/index.html" title="第 5 章 Spring Data" /></head><body><a xmlns="" href="//www.netkiller.cn/">Home</a> |
+		<a xmlns="" href="//netkiller.github.io/">简体中文</a> |
+	    <a xmlns="" href="http://netkiller.sourceforge.net/">繁体中文</a> |
+	    <a xmlns="" href="/journal/index.html">杂文</a> |
+	    <a xmlns="" href="https://zhuanlan.zhihu.com/netkiller">知乎专栏</a> |
+	    <a xmlns="" href="https://github.com/netkiller">Github</a> |
+	    <a xmlns="" href="http://my.oschina.net/neochen/">OSChina 博客</a> |
+	    <a xmlns="" href="https://cloud.tencent.com/developer/column/2078">云社区</a> |
+	    <a xmlns="" href="https://yq.aliyun.com/u/netkiller/">云栖社区</a> |
+	    <a xmlns="" href="https://www.facebook.com/bg7nyt">Facebook</a> |
+	    <a xmlns="" href="http://cn.linkedin.com/in/netkiller/">Linkedin</a> |
+	    <a xmlns="" href="//www.netkiller.cn/home/video.html">视频教程</a> |
+	    <a xmlns="" href="//www.netkiller.cn/home/donations.html">打赏(Donations)</a> |
+	    <a xmlns="" href="//www.netkiller.cn/home/about.html">About</a><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">4.2. WebFlux Router</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="webflux.html">上一页</a> </td><th width="60%" align="center">第 4 章 WebFlux framework</th><td width="20%" align="right"> <a accesskey="n" href="../data/index.html">下一页</a></td></tr></table><hr /></div><table xmlns=""><tr><td><iframe src="//ghbtns.com/github-btn.html?user=netkiller&amp;repo=netkiller.github.io&amp;type=watch&amp;count=true&amp;size=large" height="30" width="170" frameborder="0" scrolling="0" style="width:170px; height: 30px;" allowTransparency="true"></iframe></td><td><iframe src="//ghbtns.com/github-btn.html?user=netkiller&amp;repo=netkiller.github.io&amp;type=fork&amp;count=true&amp;size=large" height="30" width="170" frameborder="0" scrolling="0" style="width:170px; height: 30px;" allowTransparency="true"></iframe></td><td><iframe src="//ghbtns.com/github-btn.html?user=netkiller&amp;type=follow&amp;count=true&amp;size=large" height="30" width="240" frameborder="0" scrolling="0" style="width:240px; height: 30px;" allowTransparency="true"></iframe></td><td></td><td><a href="https://zhuanlan.zhihu.com/netkiller"><img src="/images/logo/zhihu-card-default.svg" height="25" /></a></td><td valign="middle"><a href="https://zhuanlan.zhihu.com/netkiller">知乎专栏</a> ｜ <a href="https://www.zhihu.com/club/1241768772601950208">多维度架构</a></td><td> | </td><td>微信号 netkiller-ebook  </td><td> | </td><td>QQ群：128659835 请注明“读者”</td></tr></table><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="webflux.router"></a>4.2. WebFlux Router</h2></div></div></div>
+	
+	<div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="router.component"></a>4.2.1. Component 原件</h3></div></div></div>
+		
+		<pre class="programlisting">
+		
+package cn.netkiller.webflux.component;
+
+import org.springframework.http.MediaType;
+import org.springframework.stereotype.Component;
+import org.springframework.web.reactive.function.BodyInserters;
+import org.springframework.web.reactive.function.server.ServerRequest;
+import org.springframework.web.reactive.function.server.ServerResponse;
+
+import reactor.core.publisher.Mono;
+
+@Component
+public class HelloWorldHandler {
+
+	public HelloWorldHandler() {
+	}
+
+	public Mono&lt;ServerResponse&gt; helloWorld(ServerRequest request) {
+		return ServerResponse.ok().contentType(MediaType.TEXT_PLAIN).body(BodyInserters.fromObject("Hello World!!!"));
+	}
+}
+
+		
+		</pre>
+	</div>
+	<div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="router.config"></a>4.2.2. 路由配置</h3></div></div></div>
+		
+		<pre class="programlisting">
+		
+package cn.netkiller.webflux.config;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.http.MediaType;
+import org.springframework.web.reactive.function.server.RequestPredicates;
+import org.springframework.web.reactive.function.server.RouterFunction;
+import org.springframework.web.reactive.function.server.RouterFunctions;
+import org.springframework.web.reactive.function.server.ServerResponse;
+
+import cn.netkiller.webflux.component.HelloWorldHandler;
+
+@Configuration
+public class WebFluxRouter {
+
+	public WebFluxRouter() {
+	}
+
+	@Bean
+	public RouterFunction&lt;ServerResponse&gt; routeHelloWorld(HelloWorldHandler helloWorldHandler) {
+
+		return RouterFunctions.route(RequestPredicates.GET("/hello").and(RequestPredicates.accept(MediaType.TEXT_PLAIN)), helloWorldHandler::helloWorld);
+	}
+}
+		
+		
+		</pre>
+	</div>
+	<div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="webflux.Thymeleaf"></a>4.2.3. Thymeleaf</h3></div></div></div>
+		
+		<div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="idp305"></a>4.2.3.1. 模板引擎 Thymeleaf 依赖</h4></div></div></div>
+			
+			<pre class="screen">
+			
+    &lt;dependency&gt;
+      &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+      &lt;artifactId&gt;spring-boot-starter-thymeleaf&lt;/artifactId&gt;
+    &lt;/dependency&gt;			
+			
+			</pre>
+		</div>
+		<div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="idp306"></a>4.2.3.2. application.properties 相关的配置</h4></div></div></div>
+			
+			<pre class="screen">
+			
+spring.thymeleaf.cache=true # Enable template caching.
+spring.thymeleaf.check-template=true # Check that the template exists before rendering it.
+spring.thymeleaf.check-template-location=true # Check that the templates location exists.
+spring.thymeleaf.enabled=true # Enable Thymeleaf view resolution for Web frameworks.
+spring.thymeleaf.encoding=UTF-8 # Template files encoding.
+spring.thymeleaf.excluded-view-names= # Comma-separated list of view names that should be excluded from resolution.
+spring.thymeleaf.mode=HTML5 # Template mode to be applied to templates. See also StandardTemplateModeHandlers.
+spring.thymeleaf.prefix=classpath:/templates/ # Prefix that gets prepended to view names when building a URL.
+spring.thymeleaf.reactive.max-chunk-size= # Maximum size of data buffers used for writing to the response, in bytes.
+spring.thymeleaf.reactive.media-types= # Media types supported by the view technology.
+spring.thymeleaf.servlet.content-type=text/html # Content-Type value written to HTTP responses.
+spring.thymeleaf.suffix=.html # Suffix that gets appended to view names when building a URL.
+spring.thymeleaf.template-resolver-order= # Order of the template resolver in the chain.
+spring.thymeleaf.view-names= # Comma-separated list of view names that can be resolved.
+			
+			</pre>
+		</div>
+		<div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="idp307"></a>4.2.3.3. </h4></div></div></div>
+			
+			<pre class="programlisting">
+			
+	@GetMapping("/welcome")
+    public Mono&lt;String&gt; hello(final Model model) {
+        model.addAttribute("name", "Neo");
+        model.addAttribute("city", "深圳");
+
+        String path = "hello";
+        return Mono.create(monoSink -&gt; monoSink.success(path));
+    }
+
+    @GetMapping("/list")
+    public String listPage(final Model model) {
+        final Flux&lt;City&gt; citys = cityService.findAllCity();
+        model.addAttribute("cityLists", citys);
+        return "cityList";
+    }			
+			
+			</pre>
+		</div>
+		<div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="idp308"></a>4.2.3.4. Tymeleaf 视图</h4></div></div></div>
+			
+			<p>welcome.html</p>
+			<pre class="programlisting">
+			
+&lt;!DOCTYPE html&gt;
+&lt;html lang="zh-CN"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"/&gt;
+    &lt;title&gt;欢迎页面&lt;/title&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+
+&lt;h1 &gt;你好，欢迎来自&lt;p th:text="${city}"&gt;&lt;/p&gt;的&lt;p th:text="${name}"&gt;&lt;/p&gt;&lt;/h1&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;			
+			
+			</pre>
+			<p>cityList.html</p>
+			<pre class="programlisting">
+			
+&lt;!DOCTYPE html&gt;
+&lt;html lang="zh-CN"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"/&gt;
+    &lt;title&gt;城市列表&lt;/title&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+
+&lt;div&gt;
+
+
+    &lt;table&gt;
+        &lt;legend&gt;
+            &lt;strong&gt;城市列表&lt;/strong&gt;
+        &lt;/legend&gt;
+        &lt;thead&gt;
+        &lt;tr&gt;
+            &lt;th&gt;城市编号&lt;/th&gt;
+            &lt;th&gt;省份编号&lt;/th&gt;
+            &lt;th&gt;名称&lt;/th&gt;
+            &lt;th&gt;描述&lt;/th&gt;
+        &lt;/tr&gt;
+        &lt;/thead&gt;
+        &lt;tbody&gt;
+        &lt;tr th:each="city : ${cityLists}"&gt;
+            &lt;td th:text="${city.id}"&gt;&lt;/td&gt;
+            &lt;td th:text="${city.provinceId}"&gt;&lt;/td&gt;
+            &lt;td th:text="${city.name}"&gt;&lt;/td&gt;
+            &lt;td th:text="${city.description}"&gt;&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;/tbody&gt;
+    &lt;/table&gt;
+
+&lt;/div&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;			
+			
+			</pre>
+		</div>
+
+	</div>
+	<div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="redis-reactive"></a>4.2.4. Webflux Redis</h3></div></div></div>
+		
+		<div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="idp309"></a>4.2.4.1. Maven Redis 依赖</h4></div></div></div>
+			
+			<pre class="screen">
+			
+		&lt;dependency&gt;
+			&lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+			&lt;artifactId&gt;spring-boot-starter-data-redis-reactive&lt;/artifactId&gt;
+		&lt;/dependency&gt;
+			
+			</pre>
+		</div>
+		<div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="idp310"></a>4.2.4.2. Redis 配置</h4></div></div></div>
+			
+			<pre class="screen">
+			
+server:
+  port: 8080
+spring:
+  application:
+    name: webflux
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    password: pwd2020
+    timeout: 5000
+    lettuce:
+      pool:
+        max-active: 200 
+        max-idle: 20 
+        min-idle: 5 
+        max-wait: 1000 			
+			
+			</pre>
+		</div>
+		<div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="idp311"></a>4.2.4.3. Config</h4></div></div></div>
+			
+			<pre class="programlisting">
+			
+	@Bean
+	public ReactiveRedisTemplate&lt;String, String&gt; reactiveRedisTemplate(ReactiveRedisConnectionFactory factory) {
+		ReactiveRedisTemplate&lt;String, String&gt; reactiveRedisTemplate = new ReactiveRedisTemplate&lt;&gt;(factory,RedisSerializationContext.string());
+		return reactiveRedisTemplate;
+	}			
+			
+			</pre>
+		</div>
+		<div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="idp312"></a>4.2.4.4. Service</h4></div></div></div>
+			
+			<pre class="programlisting">
+			
+@Service
+public class RedisServiceImpl implements RedisService {
+
+	@Autowired
+	private ReactiveRedisTemplate&lt;String, String&gt; redisTemplate;
+	
+	@Override
+	public Mono&lt;String&gt; get(String key) {
+		
+		ReactiveValueOperations&lt;String, String&gt; operations = redisTemplate.opsForValue();
+		return operations.get(key);
+	}
+
+	@Override
+	public Mono&lt;String&gt; set(String key,User user) {
+		
+		ReactiveValueOperations&lt;String, String&gt; operations = redisTemplate.opsForValue();
+		return operations.getAndSet(key, JSON.toJSONString(user));
+	}
+
+	@Override
+	public Mono&lt;Boolean&gt; delete(String key) {
+		
+		ReactiveValueOperations&lt;String, String&gt; operations = redisTemplate.opsForValue();
+		return operations.delete(key);
+	}
+
+	@Override
+	public Mono&lt;String&gt; update(String key,User user) {
+		
+		ReactiveValueOperations&lt;String, String&gt; operations = redisTemplate.opsForValue();
+		return operations.getAndSet(key, JSON.toJSONString(user));
+	}
+
+	@Override
+	public Flux&lt;String&gt; all(String key) {
+		ReactiveListOperations&lt;String, String&gt; operations = redisTemplate.opsForList();
+		return operations.range(key, 0, -1);
+	}
+
+
+	@Override
+	public Mono&lt;Long&gt; push(String key,List&lt;String&gt; list) {
+		
+		ReactiveListOperations&lt;String, String&gt; operations = redisTemplate.opsForList();
+		return operations.leftPushAll(key, list);
+	}
+	
+	@Override
+	public Flux&lt;String&gt; find(String key) {
+		ReactiveValueOperations&lt;String, String&gt; operations = redisTemplate.opsForValue();
+		return redisTemplate.keys(key).flatMap(keyId -&gt;operations.get(keyId));
+	}
+}			
+			
+			</pre>
+		</div>
+		<div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="idp313"></a>4.2.4.5. </h4></div></div></div>
+			
+			<pre class="programlisting">
+			
+@RestController
+@RequestMapping("/user")
+public class UserController {
+	
+	public final static String USER_KEY="user";
+	
+	@Autowired
+	private RedisService redisService;
+	
+	@GetMapping("/get/{key}")
+	public Mono&lt;String&gt; getUserByKey(@PathVariable("id")String key){
+		return redisService.get(key);
+	}
+	
+	@GetMapping("/add")
+	public Mono&lt;String&gt; add(User user){
+		user = new User();
+		user.setAccount("neo");
+		user.setPassword("123456");
+		user.setNickname("netkiller");
+		user.setEmail("netkiller@msn.com");
+		user.setPhone("");
+		user.setGender(true);
+		user.setBirthday("1980-01-30");
+		user.setProvince("广东省");
+		user.setCity("深圳市");
+		user.setCounty("南山区");
+		user.setAddress("");
+		user.setState("Enabled");
+
+		System.out.println(JSON.toJSONString(user));
+		return redisService.set("neo",user);		
+	}
+	
+	@GetMapping("/addlist")
+	public Mono&lt;Long&gt; addlist(){
+		List&lt;String&gt; list=new ArrayList&lt;String&gt;();
+		User user = new User();
+		user.setAccount("neo");
+		user.setPassword("123456");
+		user.setNickname("netkiller");
+		user.setEmail("netkiller@msn.com");
+		user.setPhone("");
+		user.setGender(true);
+		user.setBirthday("1980-01-30");
+		user.setProvince("广东省");
+		user.setCity("深圳市");
+		user.setCounty("南山区");
+		user.setAddress("");
+		user.setState("Enabled");
+		
+		//添加第一条数据
+		list.add(JSON.toJSONString(user));
+		//添加第二条数据
+		list.add(JSON.toJSONString(user));
+		//添加第三条数据
+		list.add(JSON.toJSONString(user));
+		
+		return redisService.addlist("list", list);
+	}
+
+	@GetMapping(value="/findAll",produces = MediaType.APPLICATION_STREAM_JSON_VALUE)
+	public Flux&lt;String&gt; findAll(){
+		return redisService.all("list").delayElements(Duration.ofSeconds(2));
+	}
+	
+	@GetMapping("/getUsers")
+	public Flux&lt;String&gt; findUsers() {
+		return redisService.find("*").delayElements(Duration.ofSeconds(2));
+	}
+}			
+			
+			</pre>
+		</div>
+	</div>
+	<div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="mongodb-reactive"></a>4.2.5. Webflux Mongdb</h3></div></div></div>
+		
+		<div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="idp314"></a>4.2.5.1. Maven 依赖</h4></div></div></div>
+			
+			<pre class="screen">
+			
+	&lt;dependency&gt;
+		&lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+		&lt;artifactId&gt;spring-boot-starter-data-mongodb-reactive&lt;/artifactId&gt;
+	&lt;/dependency&gt;			
+			
+			</pre>
+		</div>
+		<div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="idp315"></a>4.2.5.2. Repository</h4></div></div></div>
+			
+			<pre class="programlisting">
+			
+import org.springframework.data.mongodb.repository.ReactiveMongoRepository;
+
+import cn.netkiller.entity.User;
+
+public interface UserRepository extends ReactiveMongoRepository&lt;User, Long&gt;{
+
+}
+			
+			</pre>
+		</div>
+		<div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="idp316"></a>4.2.5.3. Service</h4></div></div></div>
+			
+			<pre class="screen">
+			
+@Service
+public class MongoServiceImpl implements MongoService {
+	
+	@Autowired
+	private UserRepository userRepository;
+	
+	@Override
+	public Mono&lt;User&gt; getById(Long id) {
+		return userRepository.findById(id);
+	}
+
+	@Override
+	public Mono&lt;User&gt; addUser(User user) {
+		return userRepository.save(user);
+	}
+
+	@Override
+	public Mono&lt;Boolean&gt; deleteById(Long id) {
+		 userRepository.deleteById(id);
+		 return Mono.create(userMonoSink -&gt; userMonoSink.success());
+	}
+
+	@Override
+	public Mono&lt;User&gt; updateById(User user) {
+		return userRepository.save(user);
+	}
+
+	@Override
+	public Flux&lt;User&gt; findAllUser() {
+		return userRepository.findAll();
+	}
+}			
+			
+			</pre>
+		</div>
+		<div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="idp317"></a>4.2.5.4. 控制器</h4></div></div></div>
+			
+			<pre class="programlisting">
+			
+@RestController
+@RequestMapping("/usermg")
+public class UserMongoController {
+	
+	@Autowired
+	private MongoService mongoService;
+
+	@GetMapping("/add")
+	public Mono&lt;User&gt; add(User user) {
+		user = new User();
+		User user = new User();
+		user.setAccount("neo");
+		user.setPassword("123456");
+		user.setNickname("netkiller");
+		user.setEmail("netkiller@msn.com");
+		user.setPhone("");
+		user.setGender(true);
+		user.setBirthday("1980-01-30");
+		user.setProvince("广东省");
+		user.setCity("深圳市");
+		user.setCounty("南山区");
+		user.setAddress("");
+		user.setState("Enabled");
+		
+	
+		System.out.println(JSON.toJSONString(user));
+		return mongoService.addUser(user);
+
+	}
+	
+	/**
+	 *	注意这里 produces = MediaType.APPLICATION_STREAM_JSON_VALUE 必须这样设置
+	 */
+	@GetMapping(value="/findAll",produces = MediaType.APPLICATION_STREAM_JSON_VALUE)
+	public Flux&lt;User&gt; findAll(){
+		return mongoService.findAllUser().delayElements(Duration.ofSeconds(1));
+	}
+}
+			
+			</pre>
+			<p>produces 如果不是application/stream+json则调用端无法滚动得到结果，将一直阻塞等待数据流结束或超时。</p>
+		</div>
+	</div>
+	<div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="idp318"></a>4.2.6. SSE</h3></div></div></div>
+		
+		<pre class="programlisting">
+		
+package cn.netkiller.webflux.controller;
+
+import java.time.Duration;
+import java.util.concurrent.ThreadLocalRandom;
+
+import org.springframework.http.MediaType;
+import org.springframework.http.codec.ServerSentEvent;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import reactor.core.publisher.Flux;
+import reactor.util.function.Tuples;
+
+@RestController
+@RequestMapping("/sse")
+public class SseController {
+	private int count_down = 10;
+
+	public SseController() {
+
+	}
+
+	@GetMapping(value = "/launch", produces = MediaType.TEXT_EVENT_STREAM_VALUE)
+	public Flux&lt;ServerSentEvent&lt;Object&gt;&gt; countDown() {
+
+		return Flux.interval(Duration.ofSeconds(1)).map(seq -&gt; Tuples.of(seq, getCountDownSec())).map(data -&gt; ServerSentEvent.&lt;Object&gt;builder().event("launch").id(Long.toString(data.getT1())).data(data.getT2().toString()).build());
+	}
+
+	private String getCountDownSec() {
+		if (count_down &gt; 0) {
+			count_down--;
+			return "倒计时：" + count_down;
+		}
+		return "发射";
+	}
+
+	@GetMapping("/random")
+	public Flux&lt;ServerSentEvent&lt;Integer&gt;&gt; randomNumbers() {
+		return Flux.interval(Duration.ofSeconds(1)).map(seq -&gt; Tuples.of(seq, ThreadLocalRandom.current().nextInt())).map(data -&gt; ServerSentEvent.&lt;Integer&gt;builder().event("random").id(Long.toString(data.getT1())).data(data.getT2()).build());
+	}
+
+	@GetMapping("/range")
+	public Flux&lt;Object&gt; range() {
+		return Flux.range(10, 1).map(seq -&gt; Tuples.of(seq, getCountDownSec())).map(data -&gt; ServerSentEvent.&lt;Object&gt;builder().event("launch").id(Long.toString(data.getT1())).data(data.getT2().toString()).build());
+	}
+
+}
+		
+		
+		</pre>
+		<p>运行结果</p>
+		<pre class="screen">
+		
+id:0
+event:launch
+data:倒计时：9
+
+id:1
+event:launch
+data:倒计时：8
+
+id:2
+event:launch
+data:倒计时：7
+
+id:3
+event:launch
+data:倒计时：6
+
+id:4
+event:launch
+data:倒计时：5
+
+id:5
+event:launch
+data:倒计时：4
+
+id:6
+event:launch
+data:倒计时：3
+
+id:7
+event:launch
+data:倒计时：2
+
+id:8
+event:launch
+data:倒计时：1
+
+id:9
+event:launch
+data:倒计时：0
+
+id:10
+event:launch
+data:发射
+		
+		
+		</pre>
+	</div>
+	<div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="idp319"></a>4.2.7. Mono/Flux</h3></div></div></div>
+		
+		<p>Mono(返回0或1个元素)/Flux(返回0-n个元素)</p>
+	</div>
+</div><div xmlns="" id="disqus_thread"></div><script xmlns="">
+
+var disqus_config = function () {
+this.page.url = "http://www.netkiller.cn";  // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = 'netkiller'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = '//netkiller.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script><noscript xmlns="">Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript><br xmlns="" /><script xmlns="" type="text/javascript" id="clustrmaps" src="//cdn.clustrmaps.com/map_v2.js?u=r5HG&amp;d=9mi5r_kkDC8uxG8HuY3p4-2qgeeVypAK9vMD-2P6BYM"></script><div class="navfooter"><hr /><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="webflux.html">上一页</a> </td><td width="20%" align="center"><a accesskey="u" href="webflux.html">上一级</a></td><td width="40%" align="right"> <a accesskey="n" href="../data/index.html">下一页</a></td></tr><tr><td width="40%" align="left" valign="top">第 4 章 WebFlux framework </td><td width="20%" align="center"><a accesskey="h" href="../index.html">起始页</a></td><td width="40%" align="right" valign="top"> 第 5 章 Spring Data</td></tr></table></div><script xmlns="">
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-11694057-1', 'auto');
+  ga('send', 'pageview');
+
+</script><script xmlns="" async="async">
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?93967759a51cda79e49bf4e34d0b0f2c";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script><script xmlns="" async="async">
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script></body></html>
